@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+     <style>
+    :root {
+    --primary: #0078D7; 
+    --accent: #F3F3F3;
+    --text: #333;
+    }
+
+    body {        
+    background-color: var(--accent);        
+    color: var(--text);        
+    font-family: 'Segoe UI', sans-serif;
+    }
+
+    .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    }
+
+
+  .container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+  }
+
+  .lgnfrm {
+    flex: 1 1 500px;
+    max-width: 500px;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .img_lato {
+    flex: 1 1 500px;
+    max-width: 500px;
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .img_lato img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .lgnfrm, .img_lato {
+      width: 100%;
+      max-width: none;
+      flex: none;
+      padding: 20px;
+    }
+
+    .img_lato img {
+      width: 100%;
+      height: auto;
+    }
+    .btn-primary:hover {
+      background-color: #005a9e;
+      border-color: #005a9e;
+    }
+    button, input, .lgnfrm, .img_lato {
+        transition: all 0.3s ease;
+    }
+    input:focus {
+        outline: none;
+        border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(0, 120, 215, 0.5);
+    }
+
+
+
+  }
+</style>
+
+
+     </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="lgnfrm">
+
+            <div class="titolo">
+                <h1>
+                    Benvenuto
+                </h1>
+            </div>
+
+            <div class="area_input">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btn-sub">Submit</button>
+                    </form>
+            </div>
+
+        </div>
+
+        <div class="img_lato">
+
+            <img src="https://media.istockphoto.com/id/2043823329/it/foto/concetto-di-sicurezza-informatica-della-rete-internet-protezione-della-privacy-dei-dati-da.jpg?s=1024x1024&w=is&k=20&c=bJF5weWy6VQlA1uvZ2S2oalfn-9ZULFGaViYjawaJos=" alt="immagine di login" >
+
+        </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let btn_submit = document.getElementById("btn-sub")
+        let x=document.getElementById("exampleInputEmail1")
+        let y=document.getElementById("exampleInputPassword1")
+        let z=document.getElementById("exampleCheck1")
+
+        function check_sub() {
+             let email=x.value.trim()
+             let password=y.value.trim()
+             let checked=z.checked
+            if (email!==""&&password!="") {
+                if (checked) {
+                    alert("Registrazione andata a buon fine (e ti ricorderemo la prossima volta)")
+                }
+                else {
+                    alert ("Registrazione andata a buon fine")
+                }
+            }
+        }
+        btn_submit.addEventListener("click",check_sub)
+    </script>
+</body>
+</html>
